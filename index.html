@@ -1,0 +1,720 @@
+```html
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arap Store - Jual Beli Akun & Top Up Diamond Game 24 Jam</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#0F172A',
+                            cyan: '#06B6D4',
+                            purple: '#8B5CF6',
+                            accent: '#3B82F6',
+                            dark: '#0B0F19',
+                            card: '#1E293B'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0B0F19;
+            color: #F8FAFC;
+        }
+        .glow-effect {
+            box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.4);
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 30px 2px rgba(59, 130, 246, 0.6);
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-cyan-500 selection:text-white">
+
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 left-0 w-full z-50 glass-card border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-purple-600 flex items-center justify-center text-white text-xl font-black shadow-lg">
+                        <i class="fa-solid font-bold fa-gamepad"></i>
+                    </div>
+                    <span class="text-2xl font-black tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-sky-300 to-purple-500">
+                        ARAP STORE
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-300">
+                    <a href="#home" class="hover:text-cyan-400 transition-colors">Beranda</a>
+                    <a href="#akun" class="hover:text-cyan-400 transition-colors">Jual Beli Akun</a>
+                    <a href="#diamond" class="hover:text-cyan-400 transition-colors">Top Up Diamond</a>
+                    <a href="#pembayaran" class="hover:text-cyan-400 transition-colors">Pembayaran</a>
+                    <a href="#cara-order" class="hover:text-cyan-400 transition-colors">Cara Order</a>
+                </div>
+
+                <!-- Contact CTA Button -->
+                <div class="hidden md:flex items-center">
+                    <a href="https://wa.me/6289518493695?text=Halo%20Arap%20Store,%20saya%20ingin%20tanya-tanya%20layanan" target="_blank" 
+                       class="flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold py-2.5 px-5 rounded-full shadow-lg hover:shadow-green-500/30 transition-all duration-300 transform hover:-translate-y-0.5">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Hubungi WA</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-300 hover:text-white focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-card border-b border-slate-800">
+            <div class="px-4 pt-2 pb-6 space-y-3">
+                <a href="#home" class="mobile-nav-link block px-3 py-2 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-cyan-400">Beranda</a>
+                <a href="#akun" class="mobile-nav-link block px-3 py-2 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-cyan-400">Jual Beli Akun</a>
+                <a href="#diamond" class="mobile-nav-link block px-3 py-2 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-cyan-400">Top Up Diamond</a>
+                <a href="#pembayaran" class="mobile-nav-link block px-3 py-2 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-cyan-400">Pembayaran</a>
+                <a href="#cara-order" class="mobile-nav-link block px-3 py-2 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-cyan-400">Cara Order</a>
+                <a href="https://wa.me/6289518493695?text=Halo%20Arap%20Store,%20saya%20ingin%20tanya-tanya" target="_blank" 
+                   class="flex items-center justify-center gap-2 w-full mt-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl shadow-lg">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    <span>Chat WhatsApp (+6289518493695)</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="pt-32 pb-20 md:pt-40 md:pb-28 relative overflow-hidden">
+        <!-- Background Ornaments -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl -z-10"></div>
+        <div class="absolute top-1/3 right-10 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl -z-10"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <!-- Badge 24 Jam -->
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/80 border border-slate-700 text-cyan-400 text-xs sm:text-sm font-semibold mb-6 animate-pulse">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+                <span>Layanan Online 24 Jam Nonstop</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-tight mb-6">
+                Pusat Jual Beli Akun & <br class="hidden sm:inline">
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-sky-300 to-purple-500">
+                    Top Up Diamond Game Terpercaya
+                </span>
+            </h1>
+
+            <p class="max-w-3xl mx-auto text-slate-400 text-base sm:text-lg md:text-xl mb-10 leading-relaxed">
+                Tempat aman & cepat transaksi Akun MLBB, Free Fire, PUBG Mobile, Genshin Impact, hingga Top Up Diamond Instant dengan harga paling bersahabat.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#akun" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold text-lg hover:from-cyan-600 hover:to-blue-700 transition-all shadow-lg hover:shadow-cyan-500/25 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-store"></i>
+                    <span>Lihat Katalog Akun</span>
+                </a>
+                <a href="#diamond" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-card text-white font-bold text-lg hover:bg-slate-800/80 transition-all border border-slate-700 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-gem text-cyan-400"></i>
+                    <span>Top Up Diamond</span>
+                </a>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 pt-10 border-t border-slate-800/80">
+                <div class="p-4 rounded-2xl glass-card">
+                    <i class="fa-solid fa-bolt text-3xl text-amber-400 mb-2"></i>
+                    <h3 class="font-bold text-white text-sm sm:text-base">Proses Kilat</h3>
+                    <p class="text-xs text-slate-400 mt-1">Selesai hitungan menit</p>
+                </div>
+                <div class="p-4 rounded-2xl glass-card">
+                    <i class="fa-solid fa-shield-halved text-3xl text-emerald-400 mb-2"></i>
+                    <h3 class="font-bold text-white text-sm sm:text-base">100% Amanah</h3>
+                    <p class="text-xs text-slate-400 mt-1">Garansi transaksi aman</p>
+                </div>
+                <div class="p-4 rounded-2xl glass-card">
+                    <i class="fa-solid fa-clock text-3xl text-cyan-400 mb-2"></i>
+                    <h3 class="font-bold text-white text-sm sm:text-base">Online 24/7</h3>
+                    <p class="text-xs text-slate-400 mt-1">Siap melayani kapan saja</p>
+                </div>
+                <div class="p-4 rounded-2xl glass-card">
+                    <i class="fa-solid fa-wallet text-3xl text-purple-400 mb-2"></i>
+                    <h3 class="font-bold text-white text-sm sm:text-base">Pembayaran Lengkap</h3>
+                    <p class="text-xs text-slate-400 mt-1">E-Wallet & Bank Transfer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION JUAL BELI AKUN GAME -->
+    <section id="akun" class="py-16 bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">
+                    <i class="fa-solid fa-shield-cat text-cyan-400 mr-2"></i> Katalog Akun Game Ready
+                </h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">
+                    Pilih akun impianmu berdasarkan spesifikasi dan budget. Transaksi dijamin 100% aman sampai pengambilalihan penuh data akun.
+                </p>
+            </div>
+
+            <!-- Filter Game Tabs -->
+            <div class="flex flex-wrap justify-center gap-2 mb-10">
+                <button onclick="filterAkun('all')" class="akun-tab active bg-cyan-500 text-white font-semibold px-5 py-2.5 rounded-full text-sm transition-all">Semua Game</button>
+                <button onclick="filterAkun('mlbb')" class="akun-tab bg-slate-800 text-slate-300 hover:bg-slate-700 font-semibold px-5 py-2.5 rounded-full text-sm transition-all">Mobile Legends</button>
+                <button onclick="filterAkun('ff')" class="akun-tab bg-slate-800 text-slate-300 hover:bg-slate-700 font-semibold px-5 py-2.5 rounded-full text-sm transition-all">Free Fire</button>
+                <button onclick="filterAkun('pubg')" class="akun-tab bg-slate-800 text-slate-300 hover:bg-slate-700 font-semibold px-5 py-2.5 rounded-full text-sm transition-all">PUBG Mobile</button>
+                <button onclick="filterAkun('genshin')" class="akun-tab bg-slate-800 text-slate-300 hover:bg-slate-700 font-semibold px-5 py-2.5 rounded-full text-sm transition-all">Genshin Impact</button>
+            </div>
+
+            <!-- Grid Akun Game -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Card Akun 1: MLBB Mythic -->
+                <div class="akun-item mlbb glass-card rounded-2xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 group">
+                    <div class="relative bg-slate-800 h-48 flex items-center justify-center overflow-hidden">
+                        <img src="https://placehold.co/600x400/1e293b/06b6d4?text=MLBB+Mythic+Glory" alt="MLBB Account" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-cyan-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">MLBB</span>
+                        <span class="absolute bottom-3 right-3 bg-slate-900/80 text-emerald-400 text-xs font-bold px-2.5 py-1 rounded-md">Status: Ready</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Akun MLBB Mythic Immortal</h3>
+                        <ul class="text-sm text-slate-300 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> <span>Rank: Mythic Immortal (120 Stars)</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> <span>Skin Total: 185+ (Collector, Lightborn)</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> <span>Emblem: All Max (Level 60)</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> <span>Bind: Moonton Single Login (All Unbind)</span></li>
+                        </ul>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-700/60">
+                            <div>
+                                <p class="text-xs text-slate-400">Harga Akun</p>
+                                <p class="text-2xl font-black text-amber-400">Rp 1.250.000</p>
+                            </div>
+                            <button onclick="orderAkun('Akun MLBB Mythic Immortal', 'Rp 1.250.000')" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold px-4 py-2.5 rounded-xl transition-all flex items-center gap-2 text-sm">
+                                <i class="fa-brands fa-whatsapp text-base"></i> Beli Akun
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Akun 2: MLBB Starter/Smurf -->
+                <div class="akun-item mlbb glass-card rounded-2xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 group">
+                    <div class="relative bg-slate-800 h-48 flex items-center justify-center overflow-hidden">
+                        <img src="https://placehold.co/600x400/1e293b/3b82f6?text=MLBB+Smurf+Epic" alt="MLBB Smurf" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-cyan-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">MLBB</span>
+                        <span class="absolute bottom-3 right-3 bg-slate-900/80 text-emerald-400 text-xs font-bold px-2.5 py-1 rounded-md">Status: Ready</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Akun MLBB Smurf Epic High WR</h3>
+                        <ul class="text-sm text-slate-300 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> <span>Rank: Epic II (Winrate 85%+)</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> <span>Hero: 45 / Skin: 30</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> <span>Hero Favorit: Fanny, Gusion, Ling</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> <span>Bind: Polosan / Unbind All</span></li>
+                        </ul>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-700/60">
+                            <div>
+                                <p class="text-xs text-slate-400">Harga Akun</p>
+                                <p class="text-2xl font-black text-amber-400">Rp 350.000</p>
+                            </div>
+                            <button onclick="orderAkun('Akun MLBB Smurf Epic High WR', 'Rp 350.000')" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold px-4 py-2.5 rounded-xl transition-all flex items-center gap-2 text-sm">
+                                <i class="fa-brands fa-whatsapp text-base"></i> Beli Akun
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Akun 3: Free Fire Sultan -->
+                <div class="akun-item ff glass-card rounded-2xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 group">
+                    <div class="relative bg-slate-800 h-48 flex items-center justify-center overflow-hidden">
+                        <img src="https://placehold.co/600x400/1e293b/ef4444?text=Free+Fire+Sultan" alt="FF Account" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Free Fire</span>
+                        <span class="absolute bottom-3 right-3 bg-slate-900/80 text-emerald-400 text-xs font-bold px-2.5 py-1 rounded-md">Status: Ready</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Akun FF Sultan Old Pass</h3>
+                        <ul class="text-sm text-slate-300 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> <span>Elite Pass Season 4 - Season Sekarang</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> <span>Bundle Set Sakura & Hip Hop</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> <span>Gun Skin EVO Megalodon Max Level</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> <span>Bind: FB Old (Aman No Tabrak)</span></li>
+                        </ul>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-700/60">
+                            <div>
+                                <p class="text-xs text-slate-400">Harga Akun</p>
+                                <p class="text-2xl font-black text-amber-400">Rp 850.000</p>
+                            </div>
+                            <button onclick="orderAkun('Akun FF Sultan Old Pass', 'Rp 850.000')" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold px-4 py-2.5 rounded-xl transition-all flex items-center gap-2 text-sm">
+                                <i class="fa-brands fa-whatsapp text-base"></i> Beli Akun
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Akun 4: PUBG Mobile -->
+                <div class="akun-item pubg glass-card rounded-2xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 group">
+                    <div class="relative bg-slate-800 h-48 flex items-center justify-center overflow-hidden">
+                        <img src="https://placehold.co/600x400/1e293b/f59e0b?text=PUBG+Mobile+M416+Glacier" alt="PUBG Account" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">PUBG Mobile</span>
+                        <span class="absolute bottom-3 right-3 bg-slate-900/80 text-emerald-400 text-xs font-bold px-2.5 py-1 rounded-md">Status: Ready</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">PUBGM M416 Glacier Level 4</h3>
+                        <ul class="text-sm text-slate-300 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> <span>Weapon: M416 Glacier (Hit Effect)</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> <span>Set Mythic: 12 Set Outfits</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> <span>Level Akun: 68 / RP Max 3 Season</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> <span>Bind: Twitter Only (Link Kosong)</span></li>
+                        </ul>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-700/60">
+                            <div>
+                                <p class="text-xs text-slate-400">Harga Akun</p>
+                                <p class="text-2xl font-black text-amber-400">Rp 1.500.000</p>
+                            </div>
+                            <button onclick="orderAkun('PUBGM M416 Glacier Level 4', 'Rp 1.500.000')" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold px-4 py-2.5 rounded-xl transition-all flex items-center gap-2 text-sm">
+                                <i class="fa-brands fa-whatsapp text-base"></i> Beli Akun
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Akun 5: Genshin Impact -->
+                <div class="akun-item genshin glass-card rounded-2xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 group">
+                    <div class="relative bg-slate-800 h-48 flex items-center justify-center overflow-hidden">
+                        <img src="https://placehold.co/600x400/1e293b/8b5cf6?text=Genshin+AR+58+Endgame" alt="Genshin Impact Account" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Genshin</span>
+                        <span class="absolute bottom-3 right-3 bg-slate-900/80 text-emerald-400 text-xs font-bold px-2.5 py-1 rounded-md">Status: Ready</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Genshin Impact AR 58 C2 Raiden</h3>
+                        <ul class="text-sm text-slate-300 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> <span>AR 58 Asia Server (Well Built)</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> <span>B5 Char: Raiden C2, Kazuha, Hu Tao, Yelan</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> <span>Weapon B5: Engulfing Lightning + 5 Signature</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> <span>Username Set / BD Set / Email Changeable</span></li>
+                        </ul>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-700/60">
+                            <div>
+                                <p class="text-xs text-slate-400">Harga Akun</p>
+                                <p class="text-2xl font-black text-amber-400">Rp 950.000</p>
+                            </div>
+                            <button onclick="orderAkun('Genshin Impact AR 58 C2 Raiden', 'Rp 950.000')" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold px-4 py-2.5 rounded-xl transition-all flex items-center gap-2 text-sm">
+                                <i class="fa-brands fa-whatsapp text-base"></i> Beli Akun
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Custom Request Card -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between border-2 border-dashed border-cyan-500/40 text-center hover:border-cyan-400 transition-all">
+                    <div class="my-auto py-6">
+                        <div class="w-16 h-16 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center mx-auto text-3xl mb-4">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Cari Akun Spesifik / Mau Jual Akun?</h3>
+                        <p class="text-sm text-slate-400 mb-6">
+                            Punya kriteria akun tersendiri atau mau menitipkan jual akun kamu di Arap Store? Kami siap bantu 24 Jam!
+                        </p>
+                        <a href="https://wa.me/6289518493695?text=Halo%20Arap%20Store,%20saya%20mau%20request%20akun%20/ %20jual%20akun" target="_blank" 
+                           class="inline-flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 text-cyan-400 font-bold px-6 py-3 rounded-xl border border-cyan-500/30 transition-all w-full">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Hubungi Admin Akun</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION PRICELIST TOP UP DIAMOND GAME -->
+    <section id="diamond" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">
+                    <i class="fa-solid fa-gem text-cyan-400 mr-2"></i> List Harga Top Up Diamond Game
+                </h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">
+                    Top up cepat, legal, dan aman 100%. Cukup masukkan User ID game kamu dan pilih nominal voucher.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+                <!-- MLBB Diamond List -->
+                <div class="glass-card rounded-2xl p-6 border border-slate-800">
+                    <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-700">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 bg-blue-600/20 text-blue-400 rounded-xl flex items-center justify-center text-2xl font-bold">
+                                ML
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Mobile Legends</h3>
+                                <p class="text-xs text-slate-400">Proses Instant (ID + Server)</p>
+                            </div>
+                        </div>
+                        <span class="bg-emerald-500/20 text-emerald-400 text-xs font-semibold px-3 py-1 rounded-full">Open 24 Jam</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <!-- Item -->
+                        <div onclick="selectDiamond('MLBB', '86 Diamond', 'Rp 20.000')" class="p-3 bg-slate-800/80 hover:bg-slate-700/80 rounded-xl cursor-pointer border border-slate-700 hover:border-cyan-500 transition-all flex justify-between items-center group">
+                            <span class="text-sm font-semibold text-slate-200 group-hover:text-cyan-400"><i class="fa-solid fa-gem text-cyan-400 mr-1.5"></i> 86 Diamond</span>
+                            <span class="text-sm font-bold text-amber-400">Rp 20.000</span>
+                        </div>
+                        <div onclick="selectDiamond('MLBB', '172 Diamond', 'Rp 40.000')" class="p-3 bg-slate-800/80 hover:bg-slate-700/80 rounded-xl cursor-pointer border border-slate-700 hover:border-cyan-500 transition-all flex justify-between items-center group">
+                            <span class="text-sm font-semibold text-slate-200 group-hover:text-cyan-400"><i class="fa-solid fa-gem text-cyan-400 mr-1.5"></i> 172 Diamond</span>
+                            <span class="text-sm font-bold text-amber-400">Rp 40.000</span>
+                        </div>
+                        <div onclick="selectDiamond('MLBB', '257 Diamond', 'Rp 60.000')" class="p-3 bg-slate-800/80 hover:bg-slate-700/80 rounded-xl cursor-pointer border border-slate-700 hover:border-cyan-500 transition-all flex justify-between items-center group">
+                            <span class="text-sm font-semibold text-slate-200 group-hover:text-cyan-400"><i class="fa-solid fa-gem text-cyan-400 mr-1.5"></i> 257 Diamond</span>
+                            <span class="text-sm font-bold text-amber-400">Rp 60.000</span>
+                        </div>
+                        <div onclick="selectDiamond('MLBB', '344 Diamond', 'Rp 80.000')" class="p-3 bg-slate-800/80 hover:bg-slate-700/80 rounded-xl cursor-pointer border border-slate-700 hover:border-cyan-500 transition-all flex justify-between items-center group">
+                            <span class="text-sm font-semibold text-slate-200 group-hover:text-cyan-400"><i class="fa-solid fa-gem text-cyan-400 mr-1.5"></i> 344 Diamond</span>
+                            <span class="text-sm font-bold text-amber-400">Rp 80.000</span>
+                        </div>
+                        <div onclick="selectDiamond('MLBB', '706 Diamond', 'Rp 160.000')" class="p-3 bg-slate-800/80 hover:bg-slate-700/80 rounded-xl cursor-pointer border border-slate-700 hover:border-cyan-500 transition-all flex justify-between items-center group">
+                            <span class="text-sm font-semibold text-slate-200 group-hover:text-cyan-400"><i class="fa-solid fa-gem text-cyan-400 mr-1.5"></i> 706 Diamond</span>
+                            <span class="text-sm font-bold text-amber-400">Rp 160.000</span>
+                        </div>
+                        <div onclick="selectDiamond('MLBB', 'Weekly Diamond Pass', 'Rp 28.000')" class="p-3 bg-gradient-to-r from-purple-900/40 to-slate-800 hover:bg-slate-700/80 rounded-xl cursor-pointer border border-purple-500/50 hover:border-cyan-500 transition-all flex justify-between items-center group">
+                            <span class="text-sm font-semibold text-purple-300 group-hover:text-cyan-400"><i class="fa-solid fa-crown text-amber-400 mr-1.5"></i> Weekly Pass</span>
+                            <span class="text-sm font-bold text-amber-400">Rp 28.000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Free Fire Diamond List -->
+                <div class="glass-card rounded-2xl p-6 border border-slate-800">
+                    <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-700">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 bg-red-600/20 text-red-400 rounded-xl flex items-center justify-center text-2xl font-bold">
+                                FF
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Free Fire</h3>
+                                <p class="text-xs text-slate-400">Proses Super Cepat (User ID)</p>
+                            </div>
+                        </div>
+                        <span class="bg-emerald-500/20 text-emerald-400 text-xs font-semibold px-3 py-1 rounded-full">Open 24 Jam</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div onclick="selectDiamond('Free Fire', '140 Diamond', 'Rp 19.000')" class="p-3 bg-slate-800/80 hover:bg-slate-700/80 rounded-xl cursor-pointer border border-slate-700 hover:border-cyan-500 transition-all flex justify-between items-center group">
+                            <span class="text-sm font-semibold text-slate-200 group-hover:text-cyan-400"><i class="fa-solid fa-fire text-red-400 mr-1.5"></i> 140 Diamond</span>
+                            <span class="text-sm font-bold text-amber-400">Rp 19.000</span>
+                        </div>
+                        <div onclick="selectDiamond('Free Fire', '355 Diamond', 'Rp 46.000')" class="p-3 bg-slate-800/80 hover:bg-slate-700/80 rounded-xl cursor-pointer border border-slate-700 hover:border-cyan-500 transition-all flex justify-between items-center group">
+                            <span class="text-sm font-semibold text-slate-200 group-hover:text-cyan-400"><i class="fa-solid fa-fire text-red-400 mr-1.5"></i> 355 Diamond</span>
+                            <span class="text-sm font-bold text-amber-400">Rp 46.000</span>
+                        </div>
+                        <div onclick="selectDiamond('Free Fire', '720 Diamond', 'Rp 92.000')" class="p-3 bg-slate-800/80 hover:bg-slate-700/80 rounded-xl cursor-pointer border border-slate-700 hover:border-cyan-500 transition-all flex justify-between items-center group">
+                            <span class="text-sm font-semibold text-slate-200 group-hover:text-cyan-400"><i class="fa-solid fa-fire text-red-400 mr-1.5"></i> 720 Diamond</span>
+                            <span class="text-sm font-bold text-amber-400">Rp 92.000</span>
+                        </div>
+                        <div onclick="selectDiamond('Free Fire', '1440 Diamond', 'Rp 180.000')" class="p-3 bg-slate-800/80 hover:bg-slate-700/80 rounded-xl cursor-pointer border border-slate-700 hover:border-cyan-500 transition-all flex justify-between items-center group">
+                            <span class="text-sm font-semibold text-slate-200 group-hover:text-cyan-400"><i class="fa-solid fa-fire text-red-400 mr-1.5"></i> 1440 Diamond</span>
+                            <span class="text-sm font-bold text-amber-400">Rp 180.000</span>
+                        </div>
+                        <div onclick="selectDiamond('Free Fire', 'Member Mingguan', 'Rp 30.000')" class="p-3 bg-slate-800/80 hover:bg-slate-700/80 rounded-xl cursor-pointer border border-slate-700 hover:border-cyan-500 transition-all flex justify-between items-center group">
+                            <span class="text-sm font-semibold text-slate-200 group-hover:text-cyan-400"><i class="fa-solid fa-calendar-week text-amber-400 mr-1.5"></i> Member Mingguan</span>
+                            <span class="text-sm font-bold text-amber-400">Rp 30.000</span>
+                        </div>
+                        <div onclick="selectDiamond('Free Fire', 'Member Bulanan', 'Rp 120.000')" class="p-3 bg-slate-800/80 hover:bg-slate-700/80 rounded-xl cursor-pointer border border-slate-700 hover:border-cyan-500 transition-all flex justify-between items-center group">
+                            <span class="text-sm font-semibold text-slate-200 group-hover:text-cyan-400"><i class="fa-solid fa-calendar-days text-amber-400 mr-1.5"></i> Member Bulanan</span>
+                            <span class="text-sm font-bold text-amber-400">Rp 120.000</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- FORM ORDER INSTAN VIA WHATSAPP -->
+            <div class="mt-12 glass-card rounded-3xl p-6 sm:p-10 border border-cyan-500/30 max-w-3xl mx-auto shadow-2xl">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold text-white">Formulir Top Up Cepat</h3>
+                    <p class="text-sm text-slate-400 mt-1">Isi data di bawah ini untuk langsung diteruskan ke WhatsApp Arap Store</p>
+                </div>
+
+                <form id="orderForm" onsubmit="submitOrder(event)" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Pilih Game</label>
+                            <select id="formGame" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-400">
+                                <option value="Mobile Legends">Mobile Legends</option>
+                                <option value="Free Fire">Free Fire</option>
+                                <option value="PUBG Mobile">PUBG Mobile</option>
+                                <option value="Genshin Impact">Genshin Impact</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">ID Game & Server</label>
+                            <input type="text" id="formUserId" placeholder="Contoh: 12345678 (2012)" required 
+                                   class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-400">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Nominal Diamond / Package</label>
+                            <input type="text" id="formNominal" placeholder="Contoh: 257 Diamond" required 
+                                   class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-400">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Metode Pembayaran</label>
+                            <select id="formPayment" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-400">
+                                <option value="DANA">DANA</option>
+                                <option value="OVO">OVO</option>
+                                <option value="GoPay">GoPay</option>
+                                <option value="ShopeePay">ShopeePay</option>
+                                <option value="Transfer Bank BCA">Transfer Bank BCA</option>
+                                <option value="Transfer Bank BRI">Transfer Bank BRI</option>
+                                <option value="Transfer Bank Mandiri">Transfer Bank Mandiri</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full mt-6 bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-bold py-4 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 text-base">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>Kirim Pesanan ke WhatsApp</span>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION METODE PEMBAYARAN -->
+    <section id="pembayaran" class="py-16 bg-slate-900/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-extrabold text-white mb-4">Metode Pembayaran Lengkap</h2>
+            <p class="text-slate-400 max-w-xl mx-auto mb-10">
+                Arap Store mendukung berbagai pilihan pembayaran resmi via E-Wallet dan Rekening Bank untuk kenyamanan Anda.
+            </p>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+                <!-- E-Wallet -->
+                <div class="p-4 glass-card rounded-xl flex flex-col items-center justify-center hover:border-cyan-400 transition-all">
+                    <i class="fa-solid fa-wallet text-3xl text-cyan-400 mb-2"></i>
+                    <span class="text-sm font-bold text-white">DANA</span>
+                </div>
+                <div class="p-4 glass-card rounded-xl flex flex-col items-center justify-center hover:border-cyan-400 transition-all">
+                    <i class="fa-solid fa-mobile-screen text-3xl text-purple-400 mb-2"></i>
+                    <span class="text-sm font-bold text-white">OVO</span>
+                </div>
+                <div class="p-4 glass-card rounded-xl flex flex-col items-center justify-center hover:border-cyan-400 transition-all">
+                    <i class="fa-solid fa-bolt text-3xl text-blue-400 mb-2"></i>
+                    <span class="text-sm font-bold text-white">GoPay</span>
+                </div>
+                <div class="p-4 glass-card rounded-xl flex flex-col items-center justify-center hover:border-cyan-400 transition-all">
+                    <i class="fa-solid fa-bag-shopping text-3xl text-orange-400 mb-2"></i>
+                    <span class="text-sm font-bold text-white">ShopeePay</span>
+                </div>
+                <!-- Bank -->
+                <div class="p-4 glass-card rounded-xl flex flex-col items-center justify-center hover:border-cyan-400 transition-all">
+                    <i class="fa-solid fa-building-columns text-3xl text-emerald-400 mb-2"></i>
+                    <span class="text-sm font-bold text-white">Bank BCA</span>
+                </div>
+                <div class="p-4 glass-card rounded-xl flex flex-col items-center justify-center hover:border-cyan-400 transition-all">
+                    <i class="fa-solid fa-money-check-dollar text-3xl text-amber-400 mb-2"></i>
+                    <span class="text-sm font-bold text-white">Bank BRI / Mandiri</span>
+                </div>
+            </div>
+            
+            <p class="text-xs text-slate-400 mt-6">
+                *Nomor rekening & tujuan E-Wallet akan diberikan oleh Admin WA saat konfirmasi pesanan.
+            </p>
+        </div>
+    </section>
+
+    <!-- SECTION CARA ORDER -->
+    <section id="cara-order" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-white mb-4">Cara Melakukan Pemesanan</h2>
+                <p class="text-slate-400">Langkah mudah bertransaksi di Arap Store 24 Jam</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="glass-card p-6 rounded-2xl relative text-center">
+                    <div class="w-10 h-10 rounded-full bg-cyan-500 text-white font-black flex items-center justify-center mx-auto mb-4">1</div>
+                    <h3 class="font-bold text-white mb-2">Pilih Produk</h3>
+                    <p class="text-xs text-slate-400">Pilih jenis akun game atau nominal diamond yang ingin dibeli.</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl relative text-center">
+                    <div class="w-10 h-10 rounded-full bg-cyan-500 text-white font-black flex items-center justify-center mx-auto mb-4">2</div>
+                    <h3 class="font-bold text-white mb-2">Isi Form / Chat WA</h3>
+                    <p class="text-xs text-slate-400">Klik tombol order atau isi form untuk otomatis tersambung ke WhatsApp.</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl relative text-center">
+                    <div class="w-10 h-10 rounded-full bg-cyan-500 text-white font-black flex items-center justify-center mx-auto mb-4">3</div>
+                    <h3 class="font-bold text-white mb-2">Lakukan Pembayaran</h3>
+                    <p class="text-xs text-slate-400">Transfer sesuai tagihan ke E-Wallet atau Rekening pilihanmu.</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl relative text-center">
+                    <div class="w-10 h-10 rounded-full bg-cyan-500 text-white font-black flex items-center justify-center mx-auto mb-4">4</div>
+                    <h3 class="font-bold text-white mb-2">Proses Selesai!</h3>
+                    <p class="text-xs text-slate-400">Admin verifikasi pembayaran dan diamond/akun langsung diserahkan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 border-t border-slate-800/80 pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-cyan-500 flex items-center justify-center text-white font-bold">
+                            <i class="fa-solid fa-gamepad"></i>
+                        </div>
+                        <span class="text-xl font-extrabold text-white">ARAP STORE</span>
+                    </div>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Penyedia layanan jual beli akun game terpercaya dan agen top up diamond game terjangkau dengan pelayanan nonstop 24 jam.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4">Kontak Layanan 24 Jam</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+                            <a href="https://wa.me/6289518493695" class="hover:text-cyan-400">+62 895-1849-3695</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-clock text-cyan-400"></i>
+                            <span>Buka 24 Jam Nonstop</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-shield-halved text-purple-400"></i>
+                            <span>Garansi Safe & Fast Process</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4">Peringatan Keamanan</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Pastikan Anda hanya bertransaksi melalui nomor WhatsApp resmi Arap Store di <strong>+6289518493695</strong>. Waspada terhadap oknum penipuan yang mengatasnamakan Arap Store!
+                    </p>
+                </div>
+            </div>
+
+            <div class="pt-6 border-t border-slate-900 text-center text-xs text-slate-500">
+                <p>&copy; 2026 Arap Store. All Rights Reserved. Designed for Gamers.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Toggle Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking nav items
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Filter Akun Game
+        function filterAkun(category) {
+            const items = document.querySelectorAll('.akun-item');
+            const tabs = document.querySelectorAll('.akun-tab');
+
+            // Toggle Tab Styles
+            tabs.forEach(tab => {
+                tab.classList.remove('bg-cyan-500', 'text-white');
+                tab.classList.add('bg-slate-800', 'text-slate-300');
+            });
+
+            event.target.classList.remove('bg-slate-800', 'text-slate-300');
+            event.target.classList.add('bg-cyan-500', 'text-white');
+
+            // Show/Hide Items
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Direct WhatsApp Order Akun
+        function orderAkun(title, harga) {
+            const phone = "6289518493695";
+            const text = `Halo Admin Arap Store, saya berminat membeli akun berikut:\n\n*Nama Akun:* ${title}\n*Harga:* ${harga}\n\nApakah akun ini masih ready? Mohon info kelanjutannya. Terima kasih!`;
+            const encodedText = encodeURIComponent(text);
+            window.open(`https://wa.me/${phone}?text=${encodedText}`, '_blank');
+        }
+
+        // Quick Select Diamond to Form
+        function selectDiamond(game, packageItem, harga) {
+            document.getElementById('formGame').value = game;
+            document.getElementById('formNominal').value = `${packageItem} (${harga})`;
+            
+            // Scroll smoothly to form
+            document.getElementById('diamond').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Submit Order Form to WA
+        function submitOrder(e) {
+            e.preventDefault();
+            const game = document.getElementById('formGame').value;
+            const userId = document.getElementById('formUserId').value;
+            const nominal = document.getElementById('formNominal').value;
+            const payment = document.getElementById('formPayment').value;
+
+            const phone = "6289518493695";
+            const text = `Halo Admin Arap Store, saya ingin melakukan Top Up Game dengan rincian berikut:\n\n` +
+                         `*Game:* ${game}\n` +
+                         `*ID & Server:* ${userId}\n` +
+                         `*Nominal/Paket:* ${nominal}\n` +
+                         `*Metode Pembayaran:* ${payment}\n\n` +
+                         `Mohon total instruksi pembayaran dan prosedurnya. Terima kasih!`;
+
+            const encodedText = encodeURIComponent(text);
+            window.open(`https://wa.me/${phone}?text=${encodedText}`, '_blank');
+        }
+    </script>
+</body>
+</html>
+```
